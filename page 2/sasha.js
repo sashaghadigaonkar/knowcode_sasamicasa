@@ -1,22 +1,19 @@
-
-gsap.from(".header-title",{
-    y:-100,
-    opacity:0,
-    duration:1
+gsap.from(".section",{
+  opacity:0,
+  duration:2,
+  delay:1,  // scale:0,
 })
 
-gsap.from(".nature-card .text", {
-//   y: -100,
+
+gsap.from(".b", {
   opacity: 0,
-  duration: 1,
-  delay:1,
-  stagger:0.5
+  duration: 2,
+  delay: 1.5, // scale:0,
 });
 
-gsap.from(".eco-button", {
-  //   y: -100,
+gsap.from(".header", {
   opacity: 0,
-  duration: 1,
-  delay: 5,
+  duration: 2,
+  delay: 0.5, // scale:0,
 });
 
