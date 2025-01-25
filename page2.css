@@ -27,10 +27,10 @@
     background-color: #fffae8;
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-    width: 80%;
+    width: 70%;
     max-height: 80vh;
     overflow-y: auto;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
    
   }
@@ -68,7 +68,7 @@
   
   
   .eco-button {
-    position: fixed;
+    
     bottom: 120px;
     left: 95vh;
     padding: 10px 20px;
@@ -82,6 +82,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.2s;
     font-family: 'font2';
+   
 
   }
   
