@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Tracker</title>
+  <style>
+    body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f0f4f8; }
+    .container { text-align: center; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; }
+    input, button { width: 100%; margin: 10px 0; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #4CAF50; color: #fff; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .bar { height: 30px; background: #e0e0e0; border-radius: 15px; overflow: hidden; margin: 20px 0; }
+    .progress { height: 100%; background: #4CAF50; width: 0; transition: 0.3s; }
+    .over { background: red; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Power Tracker</h1>
+    <form id="form">
+      <input type="number" id="ideal" placeholder="Ideal Monthly kWh" required>
+      <button type="submit">Set Limit</button>
+    </form>
+    <div id="tracker" class="hidden">
+      <p>Daily Limit: <span id="limit">0</span> kWh</p>
+      <p>Consumed: <span id="consumed">0</span> kWh</p>
+      <div class="bar"><div id="progress" class="progress"></div></div>
+    </div>
+  </div>
+  <script>
+    const $ = (id) => document.getElementById(id); let dailyLimit = 0, consumed = 0;
+    const updateBar = () => { 
+      const perc = (consumed / dailyLimit) * 100; 
+      $("progress").style.width = `${Math.min(perc, 100)}%`; 
+      $("progress").classList.toggle("over", consumed > dailyLimit); 
+      $("consumed").textContent = consumed.toFixed(2); 
+    };
+    const show = (hideForm) => { $("tracker").classList.toggle("hidden", !hideForm); $("form").classList.toggle("hidden", hideForm); };
+    $("form").onsubmit = (e) => { 
+      e.preventDefault(); 
+      dailyLimit = $("ideal").value / new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate(); 
+      $("limit").textContent = dailyLimit.toFixed(2); 
+      consumed = 0; updateBar(); show(true); 
+    };
+    $("tracker").onclick = () => { 
+      const input = parseFloat(prompt("Enter kWh consumed:", "0")); 
+      if (input > 0) { 
+        consumed += input; updateBar(); 
+        if (consumed > dailyLimit) alert("You exceeded your daily limit!"); 
+      } 
+    };
+  </script>
+</body>
+</html>
