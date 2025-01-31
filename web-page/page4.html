@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You in the Room?</title>
+    <style>
+        body {
+            background-color: #fffae8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+           
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+          
+            color: #EEAA0D;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+           background-color: #A4764C;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button.no:hover {
+  background-color: red;
+  
+  transform: scale(1.05);
+}
+        .button.no {
+            background-color: #A4764C;
+        }
+        .button:hover {
+             background-color: #A7AC1D;
+  
+  transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are you in the room?</h1>
+        <a href="#" class="button yes">Yes</a>
+        <a href="#" class="button no">No</a>
+    </div>
+</body>
+</html>

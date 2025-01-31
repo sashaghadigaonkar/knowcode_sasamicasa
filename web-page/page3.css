@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @font-face {
+    font-family: 'font1';
+    src: url(./Figtree-Regular.ttf);
+  }
+  @font-face {
+    font-family: 'font2';
+    src: url(./Raleway-Medium.ttf);
+  }
+  
+  body {
+    
+    background-color: #fff3c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 21px;
+    perspective: 1000px;
+  }
+  
+  .terms-container {
+    background-color: #fffae8;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    width: 70%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    text-align: center;
+  
+  }
+  
+  
+  .terms-header h1 {
+    font-family: font2;
+    color: #EEAA0D;
+    margin-bottom: 10px;
+    font-size: 3rem;
+  }
+  
+  .terms-header p {
+    font-family: font1;
+    color: #4A381E;
+    margin-bottom: 20px;
+  }
+  
+  .terms-section {
+    background-color: rgba(164, 118, 76, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .terms-section:hover {
+    transform: scale(1.02);
+  }
+  
+  .terms-section p {
+    font-family: font1;
+    color: #4A381E;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .next-button {
+    background-color: #A4764C;
+    color: #FFF3C4;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .next-button:hover {
+    background-color: #A7AC1D;
+    color: #1F121B;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    .terms-container {
+        width: 95%;
+        padding: 20px;
+    }
+  }
